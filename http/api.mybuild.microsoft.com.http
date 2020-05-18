@@ -1,0 +1,48 @@
+@api = https://api.mybuild.microsoft.com/api
+@jwt = {{$dotenv JWT}}
+
+###
+# @name chrome
+#
+GET {{api}}/chrome
+X-JWT: {{jwt}}
+
+###
+# @name profile
+GET {{api}}/profile
+X-JWT: {{jwt}}
+
+###
+# @name magicGuidFavoritesType1
+GET {{api}}/favorite/eb30bd02-89ea-405d-ba95-48428b87a32d/1
+X-JWT: {{jwt}}
+
+###
+# @name settings
+GET {{api}}/settings
+X-JWT: {{jwt}}
+
+###
+# @name scheduleIds
+GET {{api}}/schedule/ids
+X-JWT: {{jwt}}
+
+###
+# @name scheduleSessions
+GET {{api}}/schedule/sessions
+X-JWT: {{jwt}}
+
+###
+# @name speakerSearchFavorites
+POST {{api}}/speaker/search
+X-JWT: {{jwt}}
+Content-Type: application/json
+
+{
+    "itemsPerPage": 50,
+    "searchText": "*",
+    "searchPage": 1,
+    "sortOption": "ASC",
+    "recommendedItemIds": [],
+    "favoritesIds": {{magicGuidFavoritesType1.response.body.$}}
+}
