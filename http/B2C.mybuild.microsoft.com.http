@@ -1,0 +1,7 @@
+@b2cTenant = msfteventsb2c
+@b2cDomain = {{b2cTenant}}.onmicrosoft.com
+@b2cPolicy = B2C_1A_Universal_SignUpOrSignIn_ExternalLimitedB2BIDPs
+@b2cResetPolicy = B2C_1A_Universal_PWReset
+@b2cAppId = 0d7e796b-1cfd-4a53-95cd-49def23e4389
+
+GET https://{{b2cTenant}}.b2clogin.com/{{b2cDomain}}/{{b2cPolicy}}/v2.0/.well-known/openid-configuration

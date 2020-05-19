@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FredrikHr.MyBuild.AuthenticationConsole.WinForms": {
+      "commandName": "Project",
+      "commandLineArgs": "[config:Environment=Development]"
+    }
+  }
+}
